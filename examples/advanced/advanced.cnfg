@@ -1,0 +1,327 @@
+# path to directory that contains advanced
+S PATH_TO_LEVEL_DIRECTORY     "examples/advanced/"
+S LEVEL_FILE_EXTENSION        "lvl"
+S HIGH_SCORES_FILE_EXTENSION  "scores"
+
+# inputs
+c UP                   "w"
+c DOWN                 "s"
+c LEFT                 "a"
+c RIGHT                "d"
+c SHOOT                " "
+c SELECT_FIRST_GUN     "1"
+c SELECT_SECOND_GUN    "2"
+c SELECT_THIRD_GUN     "3"
+c SELECT_FOURTH_GUN    "4"
+c SELECT_FIFTH_GUN     "5"
+c SELECT_SIXTH_GUN     "6"
+c SELECT_SEVENTH_GUN   "7"
+c SELECT_EIGHT_GUN     "8"
+c SELECT_NINTH_GUN     "9"
+c PAUSE                "p"
+c QUIT                 "q"
+c ENTER                "e"
+
+# user interface
+S HEALTH_TEXT          "Health: "
+C HEALTH_COLOR         "RED"
+i HEALTH_MAX_LENGTH    "5"
+#
+S AMMO_TEXT            "Ammo: "
+C AMMO_COLOR           "GREEN"
+i AMMO_MAX_LENGTH       "5"
+#
+S GUN_TEXT             "Gun: "
+C GUN_COLOR            "GREEN"
+i GUN_MAX_LENGTH       "20"
+
+# background color (color of ground with nothing on it)
+C BACKGROUND_COLOR "BLACK"
+
+# level loading - symbols cannot be a whitespace
+c ENEMY_SPAWNER               "S"
+c PLAYER_STARTING_POSITION    "P"
+c BOX_LEVEL_SYMBOL            "B"
+c WALL_LEVEL_SYMBOL           "W"
+c IND_WALL_LEVEL_SYMBOL       "#"
+c WAVE_SEGMENT_SEPARATOR      "|"
+#
+S START_OF_WAVES_SEPARATOR    "<WAVES>"
+
+# player
+i P_MAX_HEALTH       "20"
+i P_NUM_OF_SPRITES   "6"
+v P_SPRITE           "{ 0|YELLOW|-}"
+v P_SPRITE_1         "{'0|YELLOW|-}"
+v P_SPRITE_2         "{0'|YELLOW|-}"
+v P_SPRITE_3         "{-0|YELLOW|-}"
+v P_SPRITE_4         "{0-|YELLOW|-}"
+v P_SPRITE_5         "{,0|YELLOW|-}"
+v P_SPRITE_6         "{0,|YELLOW|-}"
+
+# bonuses - toughness attribute is the toughness of enemies this bonus should drop from (except NONE - bonus with this toughness will never be dropped)
+v HEAL_BONUS_SPRITE        "{<3|RED|-}"
+t HEAL_BONUS_TOUGHNESS     "LOW"
+i HEAL_BONUS_HP_AMOUNT     "5"
+i HEAL_BONUS_PROBABILITY   "10"
+#
+v HEAL_PLUS_BONUS_SPRITE        "{<3|YELLOW|-}"
+t HEAL_PLUS_BONUS_TOUGHNESS     "MIDDLE"
+i HEAL_PLUS_BONUS_HP_AMOUNT     "20"
+i HEAL_PLUS_BONUS_PROBABILITY   "10"
+#
+v DOUBLE_BULLETS_BONUS_SPRITE       "{2x|GREEN|-}"
+t DOUBLE_BULLETS_BONUS_TOUGHNESS    "MIDDLE"
+i DOUBLE_BULLETS_BONUS_DURATION     "300"
+i DOUBLE_BULLETS_BONUS_PROBABILITY  "10"
+#
+v AMMO_BONUS_SPRITE        "{==|-|GREEN}"
+t AMMO_BONUS_TOUGHNESS     "HIGH"
+i AMMO_BONUS_PROBABILITY   "10"
+
+# box - something like a wall but intended to have less health points
+i BOX_HEALTH           "5"
+v BOX_SPRITE           "{[]|BLACK|WHITE}"
+
+# destructible wall
+i WALL_HEALTH          "30"
+v WALL_SPRITE          "{  |-|WHITE}"
+
+# indestructible wall
+v IND_WALL_SPRITE        "{  |-|BLUE}"
+
+# charged enemies (every enemy with two-digit value)
+C CHARGED_FG               "RED"
+C CHARGED_BG               "BLACK"
+i CHARGED_UPDATE_PERIOD    "8"
+i CHARGED_AI_LEVEL         "1"
+
+# melee enemies
+
+c M_ENEMY_1                  "1"
+i M_ENEMY_1_NUM_OF_SPRITES   "6"
+v M_ENEMY_1_SPRITE           "{ 1|BLUE|-}"
+v M_ENEMY_1_SPRITE_1         "{+1|BLUE|-}"
+v M_ENEMY_1_SPRITE_2         "{1+|BLUE|-}"
+v M_ENEMY_1_SPRITE_3         "{1+|BLUE|-}"
+v M_ENEMY_1_SPRITE_4         "{1+|BLUE|-}"
+v M_ENEMY_1_SPRITE_5         "{1+|BLUE|-}"
+v M_ENEMY_1_SPRITE_6         "{1+|BLUE|-}"
+i M_ENEMY_1_HEALTH           "1"
+i M_ENEMY_1_AI_LEVEL         "0"
+i M_ENEMY_1_UPDATE_PERIOD    "4"
+t M_ENEMY_1_TOUGHNESS        "LOW"
+i M_ENEMY_1_DAMAGE           "1"
+
+c M_ENEMY_2                  "2"
+i M_ENEMY_2_NUM_OF_SPRITES   "2"
+v M_ENEMY_2_SPRITE           "{ 2|BLUE|-}"
+v M_ENEMY_2_SPRITE_1         "{+2|BLUE|-}"
+v M_ENEMY_2_SPRITE_2         "{2+|BLUE|-}"
+v M_ENEMY_2_SPRITE_3         "{2+|BLUE|-}"
+v M_ENEMY_2_SPRITE_4         "{2+|BLUE|-}"
+v M_ENEMY_2_SPRITE_5         "{2+|BLUE|-}"
+v M_ENEMY_2_SPRITE_6         "{2+|BLUE|-}"
+i M_ENEMY_2_HEALTH           "2"
+i M_ENEMY_2_AI_LEVEL         "1"
+i M_ENEMY_2_UPDATE_PERIOD    "7"
+t M_ENEMY_2_TOUGHNESS        "LOW"
+i M_ENEMY_2_DAMAGE           "2"
+
+c M_ENEMY_3                  "3"
+i M_ENEMY_3_NUM_OF_SPRITES   "2"
+v M_ENEMY_3_SPRITE           "{ 3|BLUE|-}"
+v M_ENEMY_3_SPRITE_1         "{+3|BLUE|-}"
+v M_ENEMY_3_SPRITE_2         "{3+|BLUE|-}"
+v M_ENEMY_3_SPRITE_3         "{3+|BLUE|-}"
+v M_ENEMY_3_SPRITE_4         "{3+|BLUE|-}"
+v M_ENEMY_3_SPRITE_5         "{3+|BLUE|-}"
+v M_ENEMY_3_SPRITE_6         "{3+|BLUE|-}"
+i M_ENEMY_3_HEALTH           "3"
+i M_ENEMY_3_AI_LEVEL         "2"
+i M_ENEMY_3_UPDATE_PERIOD    "7"
+t M_ENEMY_3_TOUGHNESS        "LOW"
+i M_ENEMY_3_DAMAGE           "3"
+
+c M_ENEMY_4                  "4"
+i M_ENEMY_4_NUM_OF_SPRITES   "2"
+v M_ENEMY_4_SPRITE           "{ 4|BLUE|-}"
+v M_ENEMY_4_SPRITE_1         "{+4|BLUE|-}"
+v M_ENEMY_4_SPRITE_2         "{4+|BLUE|-}"
+v M_ENEMY_4_SPRITE_3         "{4+|BLUE|-}"
+v M_ENEMY_4_SPRITE_4         "{4+|BLUE|-}"
+v M_ENEMY_4_SPRITE_5         "{4+|BLUE|-}"
+v M_ENEMY_4_SPRITE_6         "{4+|BLUE|-}"
+i M_ENEMY_4_HEALTH           "4"
+i M_ENEMY_4_AI_LEVEL         "2"
+i M_ENEMY_4_UPDATE_PERIOD    "5"
+t M_ENEMY_4_TOUGHNESS        "LOW"
+i M_ENEMY_4_DAMAGE           "4"
+
+c M_ENEMY_5                  "6"
+i M_ENEMY_5_NUM_OF_SPRITES   "2"
+v M_ENEMY_5_SPRITE           "{ 6|BLUE|-}"
+v M_ENEMY_5_SPRITE_1         "{+6|BLUE|-}"
+v M_ENEMY_5_SPRITE_2         "{6+|BLUE|-}"
+v M_ENEMY_5_SPRITE_3         "{6+|BLUE|-}"
+v M_ENEMY_5_SPRITE_4         "{6+|BLUE|-}"
+v M_ENEMY_5_SPRITE_5         "{6+|BLUE|-}"
+v M_ENEMY_5_SPRITE_6         "{6+|BLUE|-}"
+i M_ENEMY_5_HEALTH           "9"
+i M_ENEMY_5_AI_LEVEL         "2"
+i M_ENEMY_5_UPDATE_PERIOD    "15"
+t M_ENEMY_5_TOUGHNESS        "LOW"
+i M_ENEMY_5_DAMAGE           "6"
+
+c M_ENEMY_6                  "9"
+i M_ENEMY_6_NUM_OF_SPRITES   "2"
+v M_ENEMY_6_SPRITE           "{ 9|BLUE|-}"
+v M_ENEMY_6_SPRITE_1         "{+9|BLUE|-}"
+v M_ENEMY_6_SPRITE_2         "{9+|BLUE|-}"
+v M_ENEMY_6_SPRITE_3         "{9+|BLUE|-}"
+v M_ENEMY_6_SPRITE_4         "{9+|BLUE|-}"
+v M_ENEMY_6_SPRITE_5         "{9+|BLUE|-}"
+v M_ENEMY_6_SPRITE_6         "{9+|BLUE|-}"
+i M_ENEMY_6_HEALTH           "9"
+i M_ENEMY_6_AI_LEVEL         "2"
+i M_ENEMY_6_UPDATE_PERIOD    "7"
+t M_ENEMY_6_TOUGHNESS        "HIGH"
+i M_ENEMY_6_DAMAGE           "9"
+
+# ranged enemies
+
+c R_ENEMY_1                  "5"
+i R_ENEMY_1_NUM_OF_SPRITES   "6"
+v R_ENEMY_1_SPRITE           "{ 5|BLUE|-}"
+v R_ENEMY_1_SPRITE_1         "{'5|BLUE|-}"
+v R_ENEMY_1_SPRITE_2         "{5'|BLUE|-}"
+v R_ENEMY_1_SPRITE_3         "{-5|BLUE|-}"
+v R_ENEMY_1_SPRITE_4         "{5-|BLUE|-}"
+v R_ENEMY_1_SPRITE_5         "{,5|BLUE|-}"
+v R_ENEMY_1_SPRITE_6         "{5,|BLUE|-}"
+i R_ENEMY_1_HEALTH           "5"
+i R_ENEMY_1_AI_LEVEL         "2"
+i R_ENEMY_1_UPDATE_PERIOD    "15"
+t R_ENEMY_1_TOUGHNESS        "HIGH"
+i R_ENEMY_1_SIGHT            "20"
+# gun:
+i R_ENEMY_1_PISTOL_FIRE_RATE_PERIOD    "6"
+i R_ENEMY_1_PISTOL_BULLET_DAMAGE       "5"
+C R_ENEMY_1_PISTOL_BULLET_FG           "BLUE"
+C R_ENEMY_1_PISTOL_BULLET_BG           "-"
+i R_ENEMY_1_PISTOL_BULLET_MOVE_PERIOD  "2"
+i R_ENEMY_1_PISTOL_BULLET_HEALTH       "1"
+S R_ENEMY_1_PISTOL_BULLET_VISUALS      "||--"    # up, down, left, right
+
+
+c R_ENEMY_2                  "7"
+i R_ENEMY_2_NUM_OF_SPRITES   "6" # 6
+v R_ENEMY_2_SPRITE           "{ 7|BLUE|-}"
+v R_ENEMY_2_SPRITE_1         "{'7|BLUE|-}"
+v R_ENEMY_2_SPRITE_2         "{7'|BLUE|-}"
+v R_ENEMY_2_SPRITE_3         "{-7|BLUE|-}"
+v R_ENEMY_2_SPRITE_4         "{7-|BLUE|-}"
+v R_ENEMY_2_SPRITE_5         "{,7|BLUE|-}"
+v R_ENEMY_2_SPRITE_6         "{7,|BLUE|-}"
+i R_ENEMY_2_HEALTH           "7"
+i R_ENEMY_2_AI_LEVEL         "2"
+i R_ENEMY_2_UPDATE_PERIOD    "40"
+t R_ENEMY_2_TOUGHNESS        "MIDDLE"
+i R_ENEMY_2_SIGHT            "20"
+# gun:
+i R_ENEMY_2_PISTOL_FIRE_RATE_PERIOD    "14"
+i R_ENEMY_2_PISTOL_BULLET_DAMAGE       "7"
+C R_ENEMY_2_PISTOL_BULLET_FG           "BLUE"
+C R_ENEMY_2_PISTOL_BULLET_BG           "-"
+i R_ENEMY_2_PISTOL_BULLET_MOVE_PERIOD  "6"
+i R_ENEMY_2_PISTOL_BULLET_HEALTH       "2"
+S R_ENEMY_2_PISTOL_BULLET_VISUALS      "||--"    # up, down, left, right
+
+c R_ENEMY_3                  "8"
+i R_ENEMY_3_NUM_OF_SPRITES   "6"
+v R_ENEMY_3_SPRITE           "{ 8|BLUE|-}"
+v R_ENEMY_3_SPRITE_1         "{'8|BLUE|-}"
+v R_ENEMY_3_SPRITE_2         "{8'|BLUE|-}"
+v R_ENEMY_3_SPRITE_3         "{-8|BLUE|-}"
+v R_ENEMY_3_SPRITE_4         "{8-|BLUE|-}"
+v R_ENEMY_3_SPRITE_5         "{,8|BLUE|-}"
+v R_ENEMY_3_SPRITE_6         "{8,|BLUE|-}"
+i R_ENEMY_3_HEALTH           "8"
+i R_ENEMY_3_AI_LEVEL         "2"
+i R_ENEMY_3_UPDATE_PERIOD    "10"
+t R_ENEMY_3_TOUGHNESS        "MIDDLE"
+i R_ENEMY_3_SIGHT            "20"
+# gun:
+i R_ENEMY_3_PISTOL_FIRE_RATE_PERIOD    "8"
+i R_ENEMY_3_PISTOL_BULLET_DAMAGE       "8"
+C R_ENEMY_3_PISTOL_BULLET_FG           "BLUE"
+C R_ENEMY_3_PISTOL_BULLET_BG           "-"
+i R_ENEMY_3_PISTOL_BULLET_MOVE_PERIOD  "3"
+i R_ENEMY_3_PISTOL_BULLET_HEALTH       "2"
+S R_ENEMY_3_PISTOL_BULLET_VISUALS      "||--"    # up, down, left, right
+
+# guns
+
+S LAME_GUN_NAME                "Lame gun"
+i LAME_GUN_MAX_AMMO            "-1"
+i LAME_GUN_FIRE_RATE_PERIOD    "30"
+i LAME_GUN_BULLET_DAMAGE       "1"
+i LAME_GUN_BULLET_MOVE_PERIOD  "7"
+C LAME_GUN_BULLET_FG           "WHITE"
+C LAME_GUN_BULLET_BG           "-"
+i LAME_GUN_BULLET_HEALTH       "1"
+S LAME_GUN_BULLET_VISUALS      "...."    # up, down, left, right
+
+S UZI_NAME                  "Uzi"
+i UZI_MAX_AMMO              "120"
+i UZI_FIRE_RATE_PERIOD      "3"
+i UZI_BULLET_DAMAGE         "1"
+i UZI_BULLET_MOVE_PERIOD    "0"
+C UZI_BULLET_FG             "WHITE"
+C UZI_BULLET_BG             "-"
+i UZI_BULLET_HEALTH         "1"
+S UZI_BULLET_VISUALS        "...."    # up, down, left, right
+
+S AK-0_NAME                  "AK-0"
+i AK-0_MAX_AMMO              "100"
+i AK-0_FIRE_RATE_PERIOD      "3"
+i AK-0_BULLET_DAMAGE         "4"
+i AK-0_BULLET_MOVE_PERIOD    "2"
+C AK-0_BULLET_FG             "WHITE"
+C AK-0_BULLET_BG             "-"
+i AK-0_BULLET_HEALTH         "1"
+S AK-0_BULLET_VISUALS        "****"    # up, down, left, right
+
+S SHOTGUN_NAME                  "Sh0tgun"
+i SHOTGUN_MAX_AMMO              "50"
+i SHOTGUN_FIRE_RATE_PERIOD      "8"
+i SHOTGUN_BULLET_DAMAGE         "9"
+i SHOTGUN_BULLET_MOVE_PERIOD    "3"
+C SHOTGUN_BULLET_FG             "WHITE"
+C SHOTGUN_BULLET_BG             "-"
+i SHOTGUN_BULLET_HEALTH         "5"
+S SHOTGUN_BULLET_VISUALS        "%%%%"    # up, down, left, right
+
+S CLAYMORE_NAME                  "Claym0re"
+i CLAYMORE_MAX_AMMO              "90"
+i CLAYMORE_FIRE_RATE_PERIOD      "3"
+i CLAYMORE_BULLET_DAMAGE         "9"
+i CLAYMORE_BULLET_MOVE_PERIOD    "2"
+C CLAYMORE_BULLET_FG             "WHITE"
+C CLAYMORE_BULLET_BG             "-"
+i CLAYMORE_BULLET_HEALTH         "10"
+S CLAYMORE_BULLET_VISUALS        "%%%%"    # up, down, left, right
+v CLAYMORE_CLAYMORE_SPRITE       "{%!|BLACK|YELLOW}"
+
+S MINE_PLACER_NAME                  "Mine placer"
+i MINE_PLACER_MAX_AMMO              "80"
+i MINE_PLACER_FIRE_RATE_PERIOD      "3"
+i MINE_PLACER_BULLET_DAMAGE         "4"
+i MINE_PLACER_BULLET_MOVE_PERIOD    "0"
+C MINE_PLACER_BULLET_FG             "WHITE"
+C MINE_PLACER_BULLET_BG             "-"
+i MINE_PLACER_BULLET_HEALTH         "10"
+S MINE_PLACER_BULLET_VISUALS        "oooo"    # up, down, left, right
+
+# minimum amount of milliseconds one game tick should last for - 20 is the smallest recommended value
+i MINIMUM_MILLISECONDS_PER_TICK "20"
