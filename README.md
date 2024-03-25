@@ -4,6 +4,10 @@ You play as the number zero, that wants to take its revenge.
 You stand against other numbers that will come at you in waves.
 When you start the game, you will a list of levels that you can play.
 
+![image](https://github.com/REEEhor/zero-s-revenge/assets/141070564/7deaa690-6c79-4c46-9e4f-6a3b0da94467)
+
+
+
 # Controls
 - **w a s d** - movement
 - **space** - shoot
