@@ -4,9 +4,9 @@ You play as the number zero, that wants to take its revenge.
 You stand against other numbers that will come at you in waves.
 When you start the game, you will a list of levels that you can play.
 
-![image](https://github.com/REEEhor/zero-s-revenge/assets/141070564/7deaa690-6c79-4c46-9e4f-6a3b0da94467)
+![image](https://github.com/REEEhor/zero-s-revenge/assets/141070564/6be20788-1158-4eaf-b3cd-0311ddf5e791)
 
-
+Run using `$ make run`
 
 # Controls
 - **w a s d** - movement
@@ -20,10 +20,35 @@ Other bonuses:
 - `2x` - **double bullets** - your bullets will deal double damage for a short period of time
 
 # Configuration
-Run using `$ make run`
+- Define your own levels in `./examples/default/`.
+- Here is the first level for example (see `/examples/default/beginner_level01.lvl`):
+```
+Structure of the level:
+####################################### <- unbreakable wall
+#                   W <- breakable wall
+#                   W  B              #
+#  B                W      BBBBB      #
+#                                     #
+#                                     #
+#                          W          #
+# P <- player initial position    S <- a place where enemies spawn
+#             B            W          #
+#                   W                 #
+#                   W                 #
+#   BBB             W               B <- a "box", easily breakable wall
+#######################################
 
+Definition of waves:
+<WAVES>
+1 1           - the first wave is one instance of the "1" enemy
+1 2 | 4 1     - the second wave is one instance of the "2" enemy and four instances of the "1" enemy
+1 5           - the third wave is one instance of the "5" enemy
+5 3           - ...
+1 9
+```
+
+- You can change the settings of the game in `/examples/default/default.cnfg` - the are restrains that check the validity of the variables you set.
 - If you run the game using `./game path_to_config_file`, it will try to load its settings.
-- You can change the setting of the game - the are restrains that check the validity of the variables you set.
 
 # Story
 *It was a peaceful sunny day and numbers were playing outside. The game they played was adding and subtracting. Two numbers added themselves together and... Wow! New number! 3 and 5 created 8.*
