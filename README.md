@@ -2,7 +2,7 @@
 
 You play as the number zero, that wants to take its revenge.
 You stand against other numbers that will come at you in waves.
-When you start the game, you will a list of levels that you can play.
+When you start the game, you will see a list of levels that you can play.
 
 ![image](https://github.com/REEEhor/zero-s-revenge/assets/141070564/6be20788-1158-4eaf-b3cd-0311ddf5e791)
 
